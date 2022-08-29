@@ -21,6 +21,12 @@ OR
 source activate ./env
 ```
 
+OR
+```bash
+conda create -n dvc-nlp python=3.7 -y
+source activate dvc-nlp
+```
+
 ### STEP 04- install the requirements
 ```bash
 pip install -r requirements.txt
