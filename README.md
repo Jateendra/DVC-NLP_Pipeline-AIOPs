@@ -1,7 +1,4 @@
-# dvc-project-template
-DVC project template
-
-## STEPS -
+# DVC Architecture NLP pipeline AIOPs
 
 ### STEP 01- Create a repository by using template repository
 
