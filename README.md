@@ -38,3 +38,13 @@ dvc init
 ```
 
 ### STEP 06- commit and push the changes to the remote repository
+
+### Special Commands
+To ignore .logs files to be commited to github while comitting .
+```bash
+echo "*.logs" >> logs/.gitignore
+```
+To remove file from Github.
+```bash
+rm 'logs/running_logs.log'
+```
