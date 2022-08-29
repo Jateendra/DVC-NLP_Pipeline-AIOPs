@@ -37,6 +37,17 @@ pip install -r requirements.txt
 dvc init
 ```
 
+If error copy : sqlite3.dll from loc:C:\Users\jatpradh\Anaconda3\DLLs to loc: C:\Users\jatpradh\Anaconda3\envs\dvc-ml\DLLs
+
+```bash
+dvc init -f
+```
+To see the pipeline configuration
+
+```bash
+dvc repro
+```
+
 ### STEP 06- commit and push the changes to the remote repository
 
 ### Special Commands
