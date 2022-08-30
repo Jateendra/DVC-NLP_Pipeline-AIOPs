@@ -1,11 +1,11 @@
 schema: '2.0'
 stages:
   prepared_data:
-    cmd: python src/stage_01_prepare.py
+    cmd: python src/stage_01_prepare.py --config=configs/config.yaml --params=params.yaml
     deps:
     - path: configs/config.yaml
-      md5: 2c9897a2caed3899199d97f19eb5bf1d
-      size: 229
+      md5: 93e84caba8243dba8172726f5f7c405e
+      size: 326
     - path: data/data.xml
       md5: a304afb96060aad90176268345e10355
       size: 37891850
@@ -13,11 +13,11 @@ stages:
       md5: d526fdb209afa1d8ff052247207e8596
       size: 2069
     - path: src/utils/common.py
-      md5: d162961d817182441383bdb0e674e685
-      size: 675
+      md5: 349813fd96bd92bda9cd7f8148ff31be
+      size: 1012
     - path: src/utils/data_mgmt.py
-      md5: e7a33affc6742683fe54fea3040c0eaa
-      size: 947
+      md5: cb7a122c89974b58c83c2dbea6823321
+      size: 1242
     params:
       params.yaml:
         prepare.seed: 2021
@@ -29,3 +29,35 @@ stages:
     - path: artifacts/prepared/train.tsv
       md5: efcdf3b3154aa0f0578726ac76b6540c
       size: 16706775
+  featurize:
+    cmd: python src/stage_02_featurization.py --config=configs/config.yaml --params=params.yaml
+    deps:
+    - path: artifacts/prepared/test.tsv
+      md5: 6af2e00fcd96ab64567b542e51592910
+      size: 4311132
+    - path: artifacts/prepared/train.tsv
+      md5: efcdf3b3154aa0f0578726ac76b6540c
+      size: 16706775
+    - path: configs/config.yaml
+      md5: 93e84caba8243dba8172726f5f7c405e
+      size: 326
+    - path: src/stage_02_featurization.py
+      md5: 73b1490fffec746ce93e994090d10b66
+      size: 3009
+    - path: src/utils/common.py
+      md5: 349813fd96bd92bda9cd7f8148ff31be
+      size: 1012
+    - path: src/utils/featurize.py
+      md5: 9ddf373e12567acaebff19de5964e985
+      size: 542
+    params:
+      params.yaml:
+        featurize.max_features: 3000
+        featurize.ngrams: 2
+    outs:
+    - path: artifacts/features/test.pkl
+      md5: 82aac4e187b5562970fbfd8a7e8097a9
+      size: 1270601
+    - path: artifacts/features/train.pkl
+      md5: da218a9570b09ff44225e1c6525c1edf
+      size: 4936545
