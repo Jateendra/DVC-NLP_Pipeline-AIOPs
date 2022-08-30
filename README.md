@@ -65,6 +65,8 @@ To remove file from Github.
 ```bash
 rm 'logs/running_logs.log'
 ```
+### *******************************************
+
 ### Working in DVC Studio :
 
 [DVC Studio](https://studio.iterative.ai/)  [ Use github for login ]
