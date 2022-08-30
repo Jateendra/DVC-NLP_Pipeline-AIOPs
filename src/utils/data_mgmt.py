@@ -24,6 +24,13 @@ def process_posts(fd_in,fd_out_train,fd_out_test,target_tag,split):
             fd_out.write(f"{pid}\t{label}\t{text}\n")
             line_num += 1
 
+            if line_num == 0:
+                print("pid >>>>>>>>>>",pid,"\n")
+                print("label >>>>>>>>>>",label,"\n")
+                print("title >>>>>>>>>>",title,"\n")
+                print("body >>>>>>>>>>",body,"\n")
+                print("text >>>>>>>>>>",text,"\n")
+
         except Exception as e:
             msg = f"Skippping the broken line{line_num}: {e}\n"
             logging.exception(msg)    
