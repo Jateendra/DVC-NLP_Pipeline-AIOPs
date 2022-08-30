@@ -55,6 +55,8 @@ dvc repro
 
 ### STEP 06- commit and push the changes to the remote repository
 
+### *******************************************
+
 ### Special Commands
 
 To ignore .logs files to be commited to github while comitting .
@@ -65,7 +67,6 @@ To remove file from Github.
 ```bash
 rm 'logs/running_logs.log'
 ```
-### *******************************************
 
 ### Working in DVC Studio :
 
