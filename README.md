@@ -67,7 +67,7 @@ rm 'logs/running_logs.log'
 ```
 ### Working in DVC Studio :
 
-[DVC Studio](https://studio.iterative.ai/) Use github for login
+[DVC Studio](https://studio.iterative.ai/)  [ Use github for login ]
 
     - Login in to DVC Studio 
     - Under section "Step Two - Import a repository" -> Add a project
@@ -76,3 +76,21 @@ rm 'logs/running_logs.log'
     - Select "Only select repositories" -> < Select the current working repository > -> Install & Authorize
     - Again Click on "Add a project" -> Skip & Continue 
     - Repository will be shown in the home page .
+
+### At the end :
+
+    - You can change params.yaml and do the changes to params.yaml as below :
+
+        ```bash
+        featurize:
+            max_features: 2000
+            ngrams: 3
+
+        train:
+            seed: 2001
+            n_est: 100
+            min_split: 16 
+        ```
+    - You can see the changes in the Plots and Compare in DVC Studio between 2 different commit branches .
+
+        - Link  https://studio.iterative.ai/user/Jateendra/projects/DVC-NLP_Pipeline-AIOPs-zbmme52lxp?panels=plots%2C&commits=4328253%2Cprimary
